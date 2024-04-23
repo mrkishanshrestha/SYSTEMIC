@@ -24,7 +24,7 @@ class kali extends firewall{
 
     function setup(){
         $this->companyName = "SYSTEMIC";
-        $this->domain = 'https://www.systemic.com';
+        $this->domain = 'https://kishan.vantageloaf.work';
         $this->site = explode('.',$_SERVER['SERVER_NAME'])[0];
         $_SESSION['SITE'] = $this->site;
         /*header('Access-Control-Allow-Origin: *');*/
@@ -215,19 +215,19 @@ class kali extends firewall{
                 break;
 
             case 'COMPANY_LOGO':
-                return 'https://www.systemic.com/SYSTEM/IMPORT/SITE_DATA/LOGO/logo.png';
+                return 'https://kishan.vantageloaf.work/SYSTEM/IMPORT/SITE_DATA/LOGO/logo.png';
                 break;
                 
                 
             case 'SITE_BACKGROUND':
                 $SiteName = explode('.',$_SERVER['HTTP_HOST']);
                 $data = $this->kaliPull('SELECT `college_background_image` FROM `college` WHERE `domain_cname`=:domain_cname',['domain_cname'=>$SiteName[0]]);
-                return $dir = 'https://www.systemic.com/CLIENTS/COLLEGES/'.strtoupper($SiteName[0]).'/IMG/'.$data['college_background_image'];
+                return $dir = 'https://kishan.vantageloaf.work/CLIENTS/COLLEGES/'.strtoupper($SiteName[0]).'/IMG/'.$data['college_background_image'];
                 break;
 
 
             case 'COMPANY_DOMAIN':
-                return 'https://www.systemic.com';
+                return 'https://kishan.vantageloaf.work';
                 break;
 
             default:
@@ -492,7 +492,7 @@ class kali extends firewall{
         $SiteName = explode('.',$_SERVER["HTTP_HOST"]);
         $logoutCode = "https://".$SiteName[0].".systemic.com/logout.php";
         if($SiteName[0]="systemic"){
-            $logoutCode = "https://www.systemic.com/logout.php";
+            $logoutCode = "https://kishan.vantageloaf.work/logout.php";
         }
 
         switch($data){
