@@ -169,6 +169,7 @@ class Jscript{
         if(customurl==0){
             newSrc = domain+'/'+newSrc;
         }
+        console.log('link is '+newSrc);
         alert('link is '+newSrc);
         javascript:document.location=newSrc;
 
