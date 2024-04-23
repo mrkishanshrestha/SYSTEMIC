@@ -165,9 +165,13 @@ class Jscript{
             }
     }
 
-     changeDash(newSrc) {
-        alert('dasdasd');
-        javascript:document.location=newSrc;
+     changeDash(newSrc, customurl=0) {
+        if(customurl==1){
+            javascript:document.location=newSrc;
+        }else{
+            newSrc = domain+'/'+newSrc;
+            javascript:document.location=newSrc;
+        }
     }
 
     linkFile(type,url,domain = false){
