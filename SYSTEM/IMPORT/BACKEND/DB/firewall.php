@@ -139,7 +139,7 @@ class firewall extends helper{
                     }else{
                         $_SESSION['LOGGED_IN']='XA';
                         setcookie ("LOGGED_IN","XA",time()+ 3600);
-                        $rData = [ "ERROR"=> false,'MSG'=>'https://www.systemic.com/DASHBOARD' ];
+                        $rData = [ "ERROR"=> false,'MSG'=>$this->domain.'/DASHBOARD' ];
                         $this->kaliReply($rData);
                     }
 
@@ -258,7 +258,7 @@ class firewall extends helper{
                 else if($otp_case == "LOGIN"){
                     $_SESSION['LOGGED_IN']='XA';
                     setcookie ("LOGGED_IN","XA",time()+ 3600);
-                    $rData = [ "ERROR"=> false,'MSG'=>'https://www.systemic.com/DASHBOARD' ];
+                    $rData = [ "ERROR"=> false,'MSG'=>$this->domain.'/DASHBOARD' ];
                 }
 
                 
@@ -335,7 +335,7 @@ class firewall extends helper{
                 $this->login(['USERNAME'=>$_COOKIE['USERNAME'],'PASSWORD'=>$_COOKIE['PASSWORD']]);
             }
             if(!$home && $_SERVER['REQUEST_METHOD']!="POST"){
-                header("Location:https://www.systemic.com");
+                header("Location:".$this->domain);
             }
         }
     }    
@@ -348,14 +348,14 @@ class firewall extends helper{
         setcookie ("LOGGED_IN","");
         $_SESSION = [];
 
-        header("Location: https://kishan.vantageloaf.work");
+        header("Location:".$this->domain);
 
     }
       
     function uriCheck(){
       if(strpos($_SERVER["REQUEST_URI"], "process") !== false){
           if($_SERVER['REQUEST_METHOD']!="POST") {
-              header('Location: https://kishan.vantageloaf.work');
+              header('Location:'.$this->domain);
           }
       }
     }
@@ -475,7 +475,7 @@ class firewall extends helper{
                         setcookie ("LOGGED_IN","XA",time()+ 3600);
                         $rData = [ 
                             "ERROR"=> false,
-                            'MSG'=>'https://www.systemic.com/DASHBOARD',
+                            'MSG'=>$this->domain.'/DASHBOARD',
                             '2FA'=>'FALSE',
                             "FULL_NAME"=>$result['first_name'].' '.$result['last_name'],
                             "KOHOMAH"=>$result['id'],
