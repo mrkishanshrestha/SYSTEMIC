@@ -166,8 +166,7 @@ class Jscript{
     }
 
      changeDash(newSrc) {
-        alert('dasdasd');
-        javascript:document.location=newSrc;
+        javascript:document.location='https://kishan.vantageloaf.work/'+newSrc;
     }
 
     linkFile(type,url,domain = false){
