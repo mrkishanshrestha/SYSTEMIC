@@ -1,6 +1,8 @@
+const domain = "kishan.vantageloaf.work";
 class Jscript{
 
     constructor(){
+       alert(domain);
     }
 
     playSound(url){
