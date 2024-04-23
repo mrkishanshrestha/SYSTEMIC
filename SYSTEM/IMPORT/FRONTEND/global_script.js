@@ -166,12 +166,12 @@ class Jscript{
     }
 
      changeDash(newSrc, customurl=0) {
-        if(customurl==1){
-            javascript:document.location=newSrc;
-        }else{
+        if(customurl==0){
             newSrc = domain+'/'+newSrc;
-            javascript:document.location=newSrc;
         }
+        alert('link is '+newSrc);
+        javascript:document.location=newSrc;
+
     }
 
     linkFile(type,url,domain = false){
