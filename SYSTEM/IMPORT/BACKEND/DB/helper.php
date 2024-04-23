@@ -54,7 +54,7 @@ class helper extends connectar{
 
         $SiteName = explode('.',$_SERVER['HTTP_HOST']);
         $data = $this->kaliPull('SELECT `college_background_image` FROM `college` WHERE `domain_cname`=:domain_cname',['domain_cname'=>$SiteName[0]]);
-        return $dir = 'https://kishan.vantageloaf.work/CLIENTS/COLLEGES/'.strtoupper($SiteName[0]).'/'.$data['college_background_image'];
+        return $dir = $this->domain.'/CLIENTS/COLLEGES/'.strtoupper($SiteName[0]).'/'.$data['college_background_image'];
 
       }
 
