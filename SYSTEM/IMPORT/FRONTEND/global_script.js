@@ -164,6 +164,7 @@ class Jscript{
     }
 
      changeDash(newSrc) {
+        alert('dasdasd');
         javascript:document.location=newSrc;
     }
 
