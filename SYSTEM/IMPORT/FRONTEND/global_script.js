@@ -2,7 +2,7 @@ const domain = "kishan.vantageloaf.work";
 class Jscript{
 
     constructor(){
-       alert(domain);
+       
     }
 
     playSound(url){
@@ -165,14 +165,9 @@ class Jscript{
             }
     }
 
-     changeDash(newSrc, customurl=0) {
-        if(customurl==0){
-            newSrc = domain+'/'+newSrc;
-        }
-        console.log('link is '+newSrc);
-        alert('link is '+newSrc);
+     changeDash(newSrc) {
+        alert('dasdasd');
         javascript:document.location=newSrc;
-
     }
 
     linkFile(type,url,domain = false){
