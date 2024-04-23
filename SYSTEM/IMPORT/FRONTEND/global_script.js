@@ -172,6 +172,9 @@ class Jscript{
 
         if(domain){url='https://kishan.vantageloaf.work/'+url;}
         
+        alert(url);
+
+        
         var element;
 
         if(type == "CSS" || type == "css"){
