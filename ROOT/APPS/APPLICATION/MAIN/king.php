@@ -23,13 +23,13 @@
 
     <div class="iconic-card-conatiner">
     
-            <div class="iconic-card" onclick="juju.changeDash('ROOT/APPS/APPLICATION/CREATE/');">
+            <div class="iconic-card" onclick="juju.changeDash('ROOT/APPS/APPLICATION/CREATE/',0);">
                 <div><i class="fa-solid fa-user-plus iconic-card-icon"></i></div>
                 <span class="iconic-card-title">CREATE <?php echo $APPLICATION; ?></span>
             </div>
             
             <div class="iconic-card">
-                <div><i class="fa-solid fa-magnifying-glass iconic-card-icon" onclick="juju.changeDash('https://kishan.vantageloaf.work/ROOT/APPS/APPLICATION/SEARCH/');"></i></div>
+                <div><i class="fa-solid fa-magnifying-glass iconic-card-icon" onclick="juju.changeDash('https://kishan.vantageloaf.work/ROOT/APPS/APPLICATION/SEARCH/',0);"></i></div>
                 <span class="iconic-card-title">SEARCH <?php echo $APPLICATION; ?></span>
             </div>
     </div>
