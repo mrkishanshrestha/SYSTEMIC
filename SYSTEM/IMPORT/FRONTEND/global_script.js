@@ -168,10 +168,10 @@ class Jscript{
         javascript:document.location=newSrc;
     }
 
-    linkFile(type,url,domain = false){
+    linkFile(type,url,adddomain = false){
 
-        if(domain){url=domain+url;}
-        
+        if(adddomain){url=domain+url;}
+        alert("linkurl "+url);
         var element;
 
         if(type == "CSS" || type == "css"){
