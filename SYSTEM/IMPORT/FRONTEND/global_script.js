@@ -166,12 +166,12 @@ class Jscript{
     }
 
      changeDash(newSrc) {
-        javascript:document.location='https://kishan.vantageloaf.work/'+newSrc;
+        javascript:document.location=newSrc;
     }
 
     linkFile(type,url,domain = false){
 
-        if(domain){url='https://kishan.vantageloaf.work/'+url;}
+        if(domain){url=domain+url;}
         
         var element;
 
