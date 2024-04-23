@@ -4,7 +4,7 @@ class connectar{
 
     private $SERVERNAME = "https://kishan.vantageloaf.work/";
     private $USERNAME = "u221140984_root";
-    private $PASSWORD = "!!#elloWorld!!";
+    private $PASSWORD = "HelloWorld21#";
     private $DBNAME = "u221140984_systemic";
     public  $con;
     
