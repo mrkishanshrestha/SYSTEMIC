@@ -66,7 +66,7 @@ $kali->isNotLoggedIn('https://kishan.vantageloaf.work');
 <?php $kali->insert('KALI_HEADER');?>
 
 <div id="dash-container">
-    <iframe class="dash-frame" id="dash-frame" src="https://www.systemic.com/DASHBOARD/maindash.php">
+    <iframe class="dash-frame" id="dash-frame" src="https://kishan.vantageloaf.work/DASHBOARD/maindash.php">
     </iframe>
 </div>
 

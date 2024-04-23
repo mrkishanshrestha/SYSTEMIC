@@ -342,23 +342,20 @@ class firewall extends helper{
 
     function logOut(){
         
-        $SiteName = explode('.',$_SERVER['HTTP_HOST']);
         session_destroy();
         setcookie ("USERNAME","");
         setcookie ("PASSWORD","");
         setcookie ("LOGGED_IN","");
         $_SESSION = [];
-        if($SiteName[0]=='systemic'){
-            header("Location: https://www.systemic.com");
-        }else{
-            header("Location: https://".$SiteName[0].".systemic.com");
-        }
+
+        header("Location: https://kishan.vantageloaf.work");
+
     }
       
     function uriCheck(){
       if(strpos($_SERVER["REQUEST_URI"], "process") !== false){
           if($_SERVER['REQUEST_METHOD']!="POST") {
-              header('Location: https://www.systemic.com');
+              header('Location: https://kishan.vantageloaf.work');
           }
       }
     }

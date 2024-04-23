@@ -491,9 +491,6 @@ class kali extends firewall{
 
         $SiteName = explode('.',$_SERVER["HTTP_HOST"]);
         $logoutCode = $this->domain."/logout.php";
-        if($SiteName[0]="systemic"){
-            $logoutCode = $this->domain."/logout.php";
-        }
 
         switch($data){
 
