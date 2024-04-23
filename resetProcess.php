@@ -1,7 +1,7 @@
 <?php
 
 include_once 'SYSTEM/IMPORT/BACKEND/kali.php';
-$kali->isLoggedIn('https://www.systemic.com/DASHBOARD');
+$kali->isLoggedIn($kali->domain.'/DASHBOARD');
 
 if($_POST['SEARCH_DATA']!=''){
 
