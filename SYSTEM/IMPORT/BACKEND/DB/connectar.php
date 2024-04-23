@@ -16,7 +16,6 @@ class connectar{
         try{
             $con = new PDO("mysql:host=$this->SERVERNAME;dbname=$this->DBNAME",$this->USERNAME,$this->PASSWORD);
             $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-           die("sucess");
             return $con;
         }catch(PDOException $e){
             die('Connection Failed '.$e->getMessage());
