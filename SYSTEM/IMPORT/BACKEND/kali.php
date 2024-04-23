@@ -215,14 +215,14 @@ class kali extends firewall{
                 break;
 
             case 'COMPANY_LOGO':
-                return 'https://kishan.vantageloaf.work/SYSTEM/IMPORT/SITE_DATA/LOGO/logo.png';
+                return $this->domain.'/SYSTEM/IMPORT/SITE_DATA/LOGO/logo.png';
                 break;
                 
                 
             case 'SITE_BACKGROUND':
                 $SiteName = explode('.',$_SERVER['HTTP_HOST']);
                 $data = $this->kaliPull('SELECT `college_background_image` FROM `college` WHERE `domain_cname`=:domain_cname',['domain_cname'=>$SiteName[0]]);
-                return $dir = 'https://kishan.vantageloaf.work/CLIENTS/COLLEGES/'.strtoupper($SiteName[0]).'/IMG/'.$data['college_background_image'];
+                return $dir = $this->domain.'/CLIENTS/COLLEGES/'.strtoupper($SiteName[0]).'/IMG/'.$data['college_background_image'];
                 break;
 
 
@@ -490,9 +490,9 @@ class kali extends firewall{
     function insert($data){
 
         $SiteName = explode('.',$_SERVER["HTTP_HOST"]);
-        $logoutCode = "https://".$SiteName[0].".systemic.com/logout.php";
+        $logoutCode = $this->domain."/logout.php";
         if($SiteName[0]="systemic"){
-            $logoutCode = "https://kishan.vantageloaf.work/logout.php";
+            $logoutCode = $this->domain."/logout.php";
         }
 
         switch($data){
