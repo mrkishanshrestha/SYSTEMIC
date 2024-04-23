@@ -2,7 +2,6 @@ const domain = "kishan.vantageloaf.work";
 class Jscript{
 
     constructor(){
-       
     }
 
     playSound(url){
