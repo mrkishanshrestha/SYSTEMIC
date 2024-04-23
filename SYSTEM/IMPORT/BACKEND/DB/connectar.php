@@ -2,7 +2,7 @@
 
 class connectar{
 
-    private $SERVERNAME = "156.67.222.95";
+    private $SERVERNAME = "127.0.0.1";
     private $USERNAME = "u221140984_root";
     private $PASSWORD = "HelloWorld21#";
     private $DBNAME = "u221140984_systemic";
