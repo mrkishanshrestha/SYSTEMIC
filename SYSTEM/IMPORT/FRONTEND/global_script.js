@@ -168,10 +168,10 @@ class Jscript{
         javascript:document.location=newSrc;
     }
 
-    linkFile(type,url,adddomain = false){
+    linkFile(type,url,domain = false){
 
-        if(adddomain){url=domain+url;}
-        alert("linkurl "+url);
+        if(domain){url='kishan.vantageloaf.work'+url;}
+        
         var element;
 
         if(type == "CSS" || type == "css"){
