@@ -1,0 +1,106 @@
+/*
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+:root{
+
+  --text-color : #29d9d5;
+
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 9rem;
+}
+
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: #111;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--text-color);
+  border-radius: 5rem;
+}
+
+body {
+  background: #111;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 3rem 9%;
+}
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.gallery-container {
+  -webkit-columns: 3 25rem;
+          columns: 3 25rem;
+  -webkit-column-gap: 1.5rem;
+          column-gap: 1.5rem;
+}
+
+.gallery-container .image-card {
+  border: 3px solid red;
+  margin-bottom: 1rem;
+  -webkit-column-break-inside: avoid;
+          break-inside: avoid;
+}
+
+.gallery-container .image-card img {
+  width: 100%;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.gallery-container .image-card .image-card-bio {
+  font-size: 1.4rem;
+  color: #aaa;
+}
+
+.gallery-container .image-card .image-card-title {
+  margin-top: .5rem;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.gallery-container .image-card .image-card-title::before {
+  content: "\a";
+  white-space: pre;
+}
+
+

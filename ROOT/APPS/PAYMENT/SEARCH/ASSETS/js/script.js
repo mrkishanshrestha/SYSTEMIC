@@ -1,0 +1,312 @@
+$(document).ready(function(){
+
+    $('#SEARCH_BOX').on('keyup focusin change', function(event) {
+
+        var FACULTY_REFID = $('#FACULTY').val();
+        var FACULTY_PERIOD = $('#FACULTY_PERIOD').val();
+        if( FACULTY_PERIOD == undefined ){
+            FACULTY_PERIOD = "";
+        }
+
+        var jackxData = juju.postJackx('process.php',{SEARCH_DATA: this.value,FACULTY_REFID: FACULTY_REFID, FACULTY_PERIOD:FACULTY_PERIOD});
+
+        jackxData.done(function(data){
+
+            if(data=='""' || data=="null"){$("#searchtable").empty();return true;}
+
+            jsonData=JSON.parse(data);
+            $("#searchtable").empty();
+            console.log(jsonData);
+
+            if(jsonData.ERROR){ $('#searchtable').append(`<h1 style="color:red;">`+jsonData.MSG+`</h1>`); return true; }
+
+                juju.makeKaliTable({HEAD:['STUDENT PHOTO','STUDENT DOCUMENT','QR','USERNAME','ROLL NO','FACULTY','FACULTY DURATION','FIRST NAME','MIDDLE NAME','LAST NAME','CONTACT NUMBER','BALANCE','PAY IN','PAY OUT'],ID:'STUDENT_TABLE',APPEND:'searchtable'}).then((data)=>{
+                
+                    var SNcounter=1;
+                    jsonData.forEach(element => {
+                        
+                        user_profile_picture_dir = "http://www.systemic.com/ROOT/DATA/USER_DATA/"+element.user_refid+'/'+element.profile_picture_id;
+                        document_dir = "http://www.systemic.com/ROOT/DATA/USER_DATA/"+element.id+'/'+element.document_id;
+                        
+                        juju.addTableContent({
+                            DATA:data,
+                            DB_TUPLE_ID:element.user_refid,
+                            CONTENT_ID:['USER_PROFILE_PICTURE','USER_DOCUMENT','QR'+SNcounter,'USERNAME','ROLL_NO','FACULTY','FACULTY_DURATION','FIRST_NAME','MIDDLE_NAME','LAST_NAME','CONTACT_NUMBER','BALANCE','PAY_IN','PAY_OUT'],
+                            CONTENT:[
+                                '<img src="'+user_profile_picture_dir+'">','<img src="'+document_dir+'">','<canvas style="width: 150px;" id="QR-DATA-'+SNcounter+'"></canvas>',element.username,element.roll_no,element.faculty_name,element.faculty_period+' ('+element.faculty_based_on+' )',element.first_name,element.middle_name,element.last_name,element.contact_number,element.BALANCE,'<button style="background:green;color:white;" onclick="paymentIn('+element.id+');">PAY IN</button>','<button style="background:red;color:white;" onclick="paymentOut('+element.id+');">PAY OUT</button>'
+                            ],
+                            DONT_SHOW:['USERNAME','ROLL_NO','FACULTY','FACULTY_DURATION'],
+                            COUNTER:SNcounter
+                        });
+                        var qrdata = 'username is - '+element.username+' First NAme is - '+element.first_name;
+                        juju.qr(qrdata,'QR-DATA-'+SNcounter);
+                        SNcounter++;
+                    });
+                    
+                    }).catch((data)=>{
+                        alert('error in making table');
+                    });
+
+            });
+
+    });
+         
+});
+
+function updateTuple(TableTupleSn,DB_TUPLE_ID){
+
+    var data = {
+        ATTR:['USERNAME','USER_POST','FIRST_NAME','MIDDLE_NAME','LAST_NAME','CONTACT_NUMBER','PHONE_NUMBER','EMAIL','ADDRESS','DESCRIPTION']
+     };
+
+    var jsonDataCollection = juju.jDataGather(data,true);
+    jsonDataCollection.UPDATE='JACKX_UPDATE';
+    jsonDataCollection.DB_TUPLE_ID=DB_TUPLE_ID;
+
+    var jackxData = juju.sendJackx({
+        URL:'update.php',
+        DATA: jsonDataCollection,
+        FILES:['USER_PROFILE_PICTURE','USER_DOCUMENT']
+    });
+
+    jackxData.done(function(data){  
+
+        data=JSON.parse(data);
+        if(data.ERROR){
+            juju.alerty({
+                status:'danger',
+                msg:data.MSG,
+                title:'ERROR',
+                position:'top_right'
+            });
+            juju.fireError({
+                TARGET:data.TARGET,
+                MSG:data.MSG
+            });
+        }else{
+            juju.alerty({
+                status:'success',
+                msg:data.MSG,
+                title:'Hurray',
+                position:'top_right'
+            });
+            juju.bootModal('close','STUDENT_TABLE_MODAL');
+            $('#SEARCH_BOX').val($('#SEARCH_BOX').val());
+            $('#SEARCH_BOX').focus();
+        }
+
+    });
+}
+
+
+
+var html = `    
+<form method="post" enctype = "multipart/form-data">
+    <fieldset class="kali-form">
+        <legend class="kali-formLegend">FINANCIAL PAYMENTS</legend>
+            <span class="error-log grid-fill danger-glow" id="student-create-error-log"></span>
+            
+            <div class="kali-inputbox">
+                <span>Amount</span>
+                <input type="number" name="PAYMENT_AMOUNT" id="PAYMENT_AMOUNT" placeholder="Enter Amount" required>
+            </div>
+  
+            <div class="kali-inputbox">
+                <span>Description</span>
+                <input type="text" name="PAYMENT_DESCRIPTION" id="PAYMENT_DESCRIPTION" placeholder="Enter Description" required>
+            </div>
+
+    </fieldset>
+</form>`;
+
+
+
+function paymentIn(DB_TUPLE_ID){
+
+    juju.makeModal({
+        APPEND_TO:'bts_modal_container',
+        TITLE:'PAYMENT IN',
+        MODAL_ID_NAME: 'PAYMENT_MODAL',
+        BODY:html,
+        FUNCTION:`payIn(`+DB_TUPLE_ID+`);`,
+    });
+    juju.bootModal('show','PAYMENT_MODAL');
+}
+
+function paymentOut(DB_TUPLE_ID){
+
+    juju.makeModal({
+        APPEND_TO:'bts_modal_container',
+        TITLE:'PAYMENT OUT',
+        MODAL_ID_NAME: 'PAYMENT_MODAL',
+        BODY:html,
+        FUNCTION:`payOut(`+DB_TUPLE_ID+`);`,
+    });
+    juju.bootModal('show','PAYMENT_MODAL');
+
+}
+
+
+function payIn(DB_TUPLE_ID){
+
+    var data = {
+        ATTR:['PAYMENT_AMOUNT','PAYMENT_DESCRIPTION'],
+    };
+
+    var jsonDataCollection = juju.jDataGather(data,true);
+    jsonDataCollection.UPDATE='JACKX_UPDATE';
+    jsonDataCollection.DB_TUPLE_ID=DB_TUPLE_ID;
+
+    var jackxData = juju.sendJackx({
+        URL:'paymentIn.php',
+        DATA: jsonDataCollection,
+    });
+
+    
+    jackxData.done(function(data){  
+        console.log('jackxData',jackxData);
+        data=JSON.parse(data);
+        if(data.ERROR){
+            juju.alerty({
+                status:'danger',
+                msg:data.MSG,
+                title:'ERROR',
+                position:'top_right'
+            });
+            juju.fireError({
+                TARGET:data.TARGET,
+                MSG:data.MSG
+            });
+        }else{
+            juju.alerty({
+                status:'success',
+                msg:data.MSG,
+                title:'Hurray',
+                position:'top_right'
+            });
+            juju.bootModal('close','PAYMENT_MODAL');
+            $('#data-loader-btn').click();
+        }
+
+    });
+        
+    $('#PAYMENT_MODAL').on('hidden.bs.modal', function () {
+        $('#bts_modal_container').empty();
+    });
+
+}
+
+
+
+
+function payOut(DB_TUPLE_ID){
+
+    var data = {
+        ATTR:['PAYMENT_AMOUNT','PAYMENT_DESCRIPTION'],
+    };
+
+    var jsonDataCollection = juju.jDataGather(data,true);
+    jsonDataCollection.UPDATE='JACKX_UPDATE';
+    jsonDataCollection.DB_TUPLE_ID=DB_TUPLE_ID;
+
+    var jackxData = juju.sendJackx({
+        URL:'paymentOut.php',
+        DATA: jsonDataCollection,
+    });
+
+    
+    jackxData.done(function(data){  
+        console.log('jackxData',jackxData);
+        data=JSON.parse(data);
+        if(data.ERROR){
+            juju.alerty({
+                status:'danger',
+                msg:data.MSG,
+                title:'ERROR',
+                position:'top_right'
+            });
+            juju.fireError({
+                TARGET:data.TARGET,
+                MSG:data.MSG
+            });
+        }else{
+            juju.alerty({
+                status:'success',
+                msg:data.MSG,
+                title:'Hurray',
+                position:'top_right'
+            });
+            juju.bootModal('close','PAYMENT_MODAL');
+            $('#data-loader-btn').click();
+
+        }
+
+        
+        $('#PAYMENT_MODAL').on('hidden.bs.modal', function () {
+            $('#bts_modal_container').empty();
+        });
+    
+
+    });
+
+}
+
+
+
+
+function hello(){
+    
+    var FACULTY = $('#FACULTY').val();
+        
+    var jackxData = juju.sendJackx({
+        URL:'getDuration.php',
+        DATA:{'FACULTY':FACULTY,'SELECT_OPTION':true}
+    });
+    
+    jackxData.done(function(data){  
+        
+        $('#FACULTY_DURATION').empty();
+    
+        data = JSON.parse(data);
+        console.log(data);
+        if(data.ERROR){
+            juju.fireError({
+                MSG:data.MSG,
+                TARGET:data.TARGET,
+                ERROR_LOG_ID:'error-log',
+            });
+    
+            juju.alerty({
+                status:'danger',
+                msg:data.MSG,
+                title:'ERROR',
+                position:'top_right'
+            });
+    
+            
+        }else{
+    
+            $('#FACULTY_DURATION').empty();
+    
+            var periods = data.periods;
+            var options="";
+            var selected="";
+            for(var i = 1; i<=periods; i++){
+                if(i == 1){selected="selected";}else{selected="";}
+                options=options+`<option value="`+i+`" `+selected+`>`+i+`</option>`;
+            }
+    
+            var html = `<span>Faculty `+data.based_on+` Periods</span>
+            <select name="FACULTY_PERIOD" id="FACULTY_PERIOD" required>
+                <option value="" selected>Choose Faculty Periods</option>
+                `+options+`
+            </select>`;
+    
+            $('#FACULTY_DURATION').append(html);
+        }
+    
+    });
+    
+    }
+    
+                

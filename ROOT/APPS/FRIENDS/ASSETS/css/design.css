@@ -1,0 +1,113 @@
+
+		::-webkit-scrollbar {
+            width: 1px;
+          }
+
+
+.friends-container{
+
+  /*border: 1px solid red;*/
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+}
+
+.friends-container-navigation{
+  color: #29d9d5;
+  font-size: 1.9rem;
+}
+
+.friends-container-navigation:hover{
+  color: #00ffaa;
+  cursor: pointer;
+}
+
+.friends-list-card{
+  border: 1px solid #29d9d5;
+  background: #313131;
+  display: flex;
+  gap: 2rem;
+  height: 14vh;
+  align-items: center;
+  margin: 2rem;
+}
+
+
+
+
+.friends-container-title{
+
+  /*border: 1px solid blue;*/
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+  justify-content: left;
+  align-items: center;
+  margin: 2rem;
+}
+
+
+.friends-list-img>img{
+  
+  /*border: 1px solid green ;*/
+  width: auto;
+  height: 10vh;
+  object-fit: cover;
+  padding-left: 10px;
+  font-size: 3rem;
+}
+
+.friends-list-title{
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  /*border: 1px solid purple;*/
+  align-items: baseline;
+  padding-left: 25px;
+  gap: 1rem;
+  width: 70%;
+}
+
+.friends-list-title-mutual{
+  font-size: 1.5rem;
+}
+
+.friends-list-title-address{
+  font-size: 1.5rem;
+}
+
+
+.friends-list-setting{
+  display: flex;
+  gap: 4rem;
+  /*border: 1px solid lightcoral;*/
+  width: 25%;
+  justify-content: right;
+  padding-right: 40px;
+}
+
+.friends-list-setting>i{
+  color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+
+.friends-container-friends-loadmore>a{
+  color: #29d9d5;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+
+
+
+

@@ -1,0 +1,10 @@
+.inapp-search-bar{
+    display: flex;
+    flex-flow: row;
+    justify-content: end;
+}
+
+.inapp-search-bar>.kali-inputbox>input{
+    width: 350px;
+    text-align: center;
+}

@@ -1,0 +1,26 @@
+
+
+.circle-graph {
+  position:relative;
+  margin:80px;
+  width:220px; height:220px;
+  float:left;
+}
+
+span {
+  color: #673AB7;
+  /* line-height: 220px; */
+  text-align: center;
+  width: 200px;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: 100;
+  margin-left: 12px;
+  position: absolute;
+  word-break: break-all;
+  margin-top: 90px;
+}
+
+input {
+  width: 200px;
+}

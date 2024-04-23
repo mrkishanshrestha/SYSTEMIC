@@ -1,0 +1,20 @@
+
+textarea{
+color: black;
+  background: none;
+  overflow-wrap: break-word;
+  max-height: 150px;
+  min-height: 80px;
+  width: 100%;
+}
+
+.dropzone {
+  min-height: 150px;
+  width:auto;
+  border: 1px solid rgba(42, 42, 42, 0.05);
+  background: rgba(204, 204, 204, 0.15);
+  padding: 20px;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 5px 0 rgba(43, 43, 43, 0.1);
+  box-shadow: inset 0 0 5px 0 rgba(43, 43, 43, 0.1)
+}

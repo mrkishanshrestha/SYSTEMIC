@@ -1,0 +1,221 @@
+
+:root{
+    --error-color:#d92929;
+    --admin-text-color:#eb2525;
+
+  }
+
+  ::file-selector-button {
+    display: none;
+  }
+
+ /*  
+  * {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+  }
+  
+  html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 9rem;
+  }
+  */
+
+  .kali-form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    width: 100%;
+    margin: 1rem auto;
+    padding: 3rem 2rem;
+    text-align: center;
+    background-color: var(--form-background);
+    border-radius: 1rem;
+    -webkit-box-shadow: 0 0.5rem 1rem rgba(17, 17, 17, 0.3);
+    -moz-box-shadow: 0 0.5rem 1rem rgba(17, 17, 17, 0.3);
+      box-shadow: 0 0.5rem 1rem rgba(17, 17, 17, 0.3);
+    color: var(--text-color );
+
+  }
+
+  .grid-fill{
+    grid-column: 1/-1;
+  }
+  
+  .kali-form .kali-inputbox,
+  .kali-form .kali-checkbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }  
+
+    
+  .kali-form .kali-checkbox .kali-checkbox-options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }  
+      
+  .kali-form .kali-checkbox span {
+    font-size: 2rem;
+    color: var(--text-color);
+  }  
+      
+  .kali-form .kali-checkbox .kali-checkbox-options .kali-checkbox-option-data{
+    padding:2rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 3rem;
+  }  
+
+        
+  .kali-checkbox-data{
+    height:2vh;
+    width:2vh;
+    cursor: pointer;
+  }  
+
+          
+
+
+
+
+
+
+
+  .kali-formLegend{
+    color: var(--form-title-text-color);
+    font-size: 2rem;
+    background-color: var(--text-color);
+    padding: 1rem;
+    border-radius: 1rem;
+    font-weight: bold;
+    margin: auto;
+
+  }
+
+  .kali-formLegend:hover{
+    background-color: var(--text-color);
+    box-shadow: 0 0.3rem 4rem var(--input-box-shadow);
+  }
+
+  .kali-form .kali-inputbox input:focus,
+  .kali-form .kali-inputbox select:focus,
+  .kali-form .kali-inputbox select:hover,
+  .kali-form .kali-inputbox input:hover {
+    border: 0.3rem solid var(--text-color);
+    box-shadow: 0 0.3rem 4rem var(--input-box-shadow);
+    cursor: pointer;
+  }
+  
+  .kali-form .kali-inputbox span {
+    font-size: 2rem;
+    color: var(--text-color);
+    width: auto;
+  }
+
+  .kali-form .kali-inputbox input,
+  .kali-form .kali-inputbox textarea,
+  .kali-form .kali-inputbox select {
+    width: 95%;
+    padding: 1.2rem 1.4rem;
+    border-radius: 5rem;
+    border: 0.2rem solid var(--text-color);
+    font-size: 1.6rem;
+    color: var(--text-color);
+    text-transform: none;
+    background: none;
+    margin-top: 1rem;
+  }
+
+
+  
+.kali-inputbox input,
+.kali-inputbox textarea,
+.kali-inputbox select {
+    width: 95%;
+    padding: 1.2rem 1.4rem;
+    border-radius: 5rem;
+    border: 0.2rem solid var(--input-border-color);
+    font-size: 1.6rem;
+    color: #aaa;
+    text-transform: none;
+    background: none;
+    margin-top: 1rem;
+  }
+
+
+
+  .kali-form .kali-inputbox textarea{
+    border-radius: 3rem;
+    height: 250px;
+  }
+
+  .kali-form .kali-inputbox select {
+    background-color: none;
+  }
+
+/*style items (options):*/
+.kali-form .kali-inputbox select option {
+  position: absolute;
+  border: 2rem solid red;
+  background-color: none;
+  color: black;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+
+.kali-form .kali-inputbox select option:hover{
+  background-color:var(--text-color);
+}
+
+  
+.kali-btn {
+    margin-top: 1rem;
+    padding: 1rem 3rem;
+    font-size: 1.7rem;
+    color: var(--text-color);
+    border: 0.2rem solid var(--text-color);
+    border-radius: 5rem;
+    cursor: pointer;
+    background: none;
+  }
+
+  .kali-inputbtn{
+    grid-column: 1/3;
+    width: 20%;
+    margin: auto;
+  }
+
+  .kali-inputbtn .kali-btn:hover {
+    background: var(--text-color);
+    color: #111;
+  }
+  
+    @media (max-width: 950px) {
+
+    .kali-form .kali-inputbox {
+        grid-column: 1/3;
+      }
+
+      .kali-inputbtn{
+        width: 100%;
+      }
+      
+  }

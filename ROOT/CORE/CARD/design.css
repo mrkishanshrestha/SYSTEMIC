@@ -1,0 +1,130 @@
+/**
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+:root{
+
+  --text-color : #29d9d5;
+
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 9rem;
+}
+
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: #111;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--text-color);
+  border-radius: 5rem;
+}
+
+body {
+  background: #111;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 3rem 9%;
+}
+
+*/
+
+
+.card-container{
+    display: -ms-grid;
+    display: grid;
+    -moz-grid-columns: (minmax(27rem, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .card-container .card {
+    border-radius: 1rem;
+    overflow: hidden;
+    background: #222;
+  }
+  
+  .card-container .card:hover img {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  
+  .card-container .card .card-image {
+    height: 20rem;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .card-container .card .card-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .card-container .card .content {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .card-container .card .content .card-title {
+    font-size: 2rem;
+    font-weight: 3rem;
+    color: #fff;
+  }
+  
+  .card-container .card .content .card-bio::before{
+    content: "\a";
+    white-space: pre;
+}
+
+  .card-container .card .content .card-bio {
+    content: "<br>";
+    padding: 1rem 0;
+    font-size: 1.4rem;
+    color: #aaa;
+    line-height: 2;
+  }
+  
+  .card-container .card .content .card-action::before{
+    content: "\a";
+    white-space: pre;
+}
+
+
+  .card-container .card .content .card-action {
+    font-size: 1.7rem;
+    color: var(--text-color);
+  }
+  
+  .card-container .card .content .card-action:hover i {
+    padding-left: 1rem;
+  }
+  
+  .card-container .card .content .card-action i {
+    padding-right: .5rem;
+  }
+  

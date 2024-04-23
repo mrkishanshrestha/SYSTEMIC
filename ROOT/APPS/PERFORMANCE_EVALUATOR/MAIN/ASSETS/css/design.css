@@ -1,0 +1,6 @@
+#main-container{
+  display: flex;
+  justify-items: end;
+  align-items: end;
+  gap: 2rem;
+}

@@ -1,0 +1,259 @@
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../FONTS/Poppins/poppins.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+* {
+  font-family: 'Poppins';
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  /*-webkit-transition: all .2s linear;
+  transition: all .2s linear;*/
+  text-align: center;
+}
+
+.kali-table-btn{
+  color: white;
+  background: black;
+  padding: 0.9rem;
+  border-radius: 50px;
+}
+
+.none{
+  display: none;
+}
+
+:root{
+  --text-color : black;
+  --clock-color: black;
+  --dashContainer-background : #f8f8f8/*#f2f0f0*/;
+  --icon-color : red;
+
+  /* Side Nav Bar*/
+  --sideNav-background : rgba(198, 198, 198, 0.998);
+  --sidenav-text-color : black;
+
+  /* Kali Form */
+  --form-background : #f8f8f8;
+  --form-title-text-color : white;
+  --input-box-shadow:#0022ff;
+  --input-border-color:white;
+
+
+  /* Dark Theme */
+  --dt-text-color:white;
+}
+
+
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 9rem;    
+  /* background-color: #242526; */
+}
+
+/* Customization For Scrollbar Start*/
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: #111  !important;;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--text-color);
+  border-radius: 5rem;
+}
+/* Customization For Scrollbar End*/
+
+body {
+  background: #111;
+  background-color: #242526;
+  overflow-x: hidden;
+  background: #fcfcfc !important;
+}
+
+section {
+  padding: 3rem 9%;
+}
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+/* global buttonn*/
+
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.7rem;
+  border: 0.2rem solid var(--text-color);
+  border-radius: 5rem;
+  cursor: pointer;
+  color: var(--dt-text-color);
+  background: var(--text-color);
+}
+
+.btn:hover {
+  background: var(--text-color);
+  color:  var(--dt-text-color);
+  text-decoration-color:  var(--dt-text-color);
+}
+
+.error-log{
+  border: 0.3rem solid var(--error-color);
+  border-radius:2rem;
+  cursor: pointer;
+}
+
+.danger-glow {
+  border: 0.3rem solid var(--error-color) !important; 
+  box-shadow: 0 0.3rem 4rem var(--error-color);
+  border-radius:2rem;
+  color: white;
+}
+
+
+.danger-glow:hover {
+  box-shadow: 0 0.3rem 4rem var(--error-color) !important;
+}
+
+.kali-glow:hover {
+  background: var(--text-color);
+  border: 0.3rem solid var(--text-color);
+  box-shadow: 0 0.3rem 4rem #00fff9;
+  cursor: pointer;
+  color: var(--dt-text-color);
+  font-weight: bolder;
+}
+/*gloabl button*/
+
+
+/* heading start*/
+.heading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.heading span {
+  color: var(--text-color);;
+  font-size: 2rem;
+}
+
+.heading h1 {
+  font-size: 4rem;
+  color: #fff;
+}
+/* heading stop*/
+
+
+
+
+/* ERROR LOG */
+.error-log{
+  display: none;
+  border: 1px solid red;
+  color: var(--text-color);
+  font-size: 2rem;
+  width: fit-content;
+  margin: auto;
+  padding: 1rem;
+}
+
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  section {
+    padding: 3rem 2rem;
+  }
+}
+
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+  .banner .content h3 {
+    font-size: 2.7rem;
+  }
+}
+
+
+
+
+/* for main board ko lagi ho yo code chai start*/
+
+.main-board{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-content: center;
+  height: 100vh;
+  justify-content: center;
+  padding-right: 110px;
+}
+
+.main-board>.iconic-card-conatiner {
+-ms-grid-columns: (minmax(30rem, 30rem))[auto-fit] !important;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 30rem)) !important;
+}
+/* for main board ko lagi ho yo code chai stop*/
+
+
+
+
+/*sizing*/
+
+.w10{
+  width: 10vw;
+}
+.w20{
+  width: 20vw;
+}
+.w30{
+  width: 30vw;
+}
+.w40{
+  width: 40vw;
+}
+.width50{
+  width: 50vw;
+}
+.w60{
+  width: 60vw;
+}
+.w70{
+  width: 70vw;
+}
+.w80{
+  width: 80vw;
+}
+.w90{
+  width: 90vw;
+}
+.w100{
+  width: 100vw;
+}

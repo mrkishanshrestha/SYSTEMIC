@@ -1,0 +1,11 @@
+.speed-bar-canvas {
+  background: black;
+  border-radius: 17rem 17rem 0 0;
+}
+
+.speed-bar-text {
+  color: white;
+  font-weight: 600;
+  font-size: 24px;
+  margin-top: -50px;
+}

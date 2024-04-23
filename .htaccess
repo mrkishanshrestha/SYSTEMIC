@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^systemic.com
+RewriteRule (.*) https://www.systemic.com/$1 [R=301,l]
+
+RewriteEngine On
+<FilesMatch ".(eot|otf|ttf|woff|woff2)">
+    Header always set Access-Control-Allow-Origin "*"
+</FilesMatch>

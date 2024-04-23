@@ -1,0 +1,59 @@
+<!doctype html>
+	<head>
+		<style>
+			/* CSS comes here */
+			body {
+			    padding:20px;
+			}
+			input {
+			    padding:5px;
+			    background-color:transparent;
+			    border:none;
+			    border-bottom:solid 4px #8c52ff;
+			    width:250px;
+			    font-size:16px;
+			}
+			
+			.qr-btn {
+			    background-color:#8c52ff;
+			    padding:8px;
+			    color:white;
+			    cursor:pointer;
+			}
+		</style>
+	</head>
+	<body>
+
+        <div>
+            <button class="qr-btn" onclick="generateQRCode('kishan')">Create QR Code</button>
+        </div>
+
+        <br/>
+
+        <canvas id="qr-code"></canvas>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+		<script>
+			/* JS comes here */
+			var qr;
+			(function() {
+                    qr = new QRious({
+                    element: document.getElementById('qr-code'),
+                    size: 200,
+                    value: 'Systemic'
+                });
+            })();
+            
+            function generateQRCode(dataString) {
+                var qrtext = dataString;
+                alert(qrtext);
+                qr.set({
+                    foreground: 'black',
+                    size: 200,
+                    value: qrtext
+                });
+            }
+		</script>
+        
+	</body>
+</html>

@@ -1,0 +1,150 @@
+<?php
+    require_once '../SYSTEM/IMPORT/BACKEND/kali.php';
+    $SiteName = explode('.',$_SERVER['HTTP_HOST']);
+    $kali->isLoggedIn('http://'.$SiteName[0].'.systemic.com/DASHBOARD');
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $kali->sysInfo('COMPANY_NAME');?></title>
+    
+    <?php
+        $kali->link('KALI_FORM');
+        $kali->link('GLOBAL_SCRIPT');
+        $kali->link('GLOBAL_DESIGN');
+        $kali->link('JQUERY');
+        $kali->link('ASSETS');
+    ?>
+
+</head>
+
+<body>
+<?php $bgImage = $kali->getSiteBackground();?>
+
+<script>
+
+$(document).ready(function(){
+
+    juju.setSiteBackground('home','<?php echo $bgImage;?>');
+});
+
+
+</script>
+ 
+
+<!-- home mainpage section starts  -->
+
+<section class="home" id="home">
+
+    <div class="content">
+        <h3><?php echo strtoupper($_SESSION['SITE']);?></h3>
+        <span >College Management System
+        </span>
+        <a href="#login-form" class="btn kali-glow">Login Now</a>
+    </div>
+
+</section>
+
+<!-- home mainpage section ends -->
+
+<!-- LOGIN starts  -->
+
+<section id="user-login-form">
+
+    <form id="login-form" method="post">
+        <fieldset class="kali-form">
+            <legend class="kali-formLegend">LOGIN FORM</legend>
+
+            <span class="error-log grid-fill danger-glow" id="login-error-log"></span>
+            
+            <div class="kali-inputbox">
+                <span>Username:</span>
+                <input type="text"  name="USERNAME" id="USERNAME" placeholder="Enter Your Username" value="" >
+            </div>
+
+            <div class="kali-inputbox">
+                <span>Password:</span>
+                <input type="password" name="PASSWORD" id="PASSWORD" placeholder="Enter Your Password" value="" >
+            </div>
+
+            <div class="kali-inputbox kali-inputbtn">
+                <input type="submit" name="SUBMIT" id="SUBMIT" value="LET'S GO" class="kali-btn">
+            </div> 
+            
+            <div class="kali-inputbox kali-inputbtn">
+                <button id="forgetPassowrd" onclick="resetPassword();" class="kali-btn">Forget Password ?</button>
+            </div> 
+
+        </fieldset>
+    </form>
+
+</section>
+
+<!-- LOGIN ends -->
+
+
+
+<section id="resetSection-form" style="display:none;">
+
+    <form id="reset-form" method="post">
+        <fieldset class="kali-form">
+            <legend class="kali-formLegend">RESET FORM</legend>
+
+            <span class="error-log grid-fill danger-glow" id="reset-error-log"></span>
+            
+            <div class="kali-inputbox grid-fill">
+                <span>Email:</span>
+                <input type="text"  name="RESET_EMAIL" id="RESET_EMAIL" placeholder="Enter Your Email Linked To Account" value="" required>
+            </div>
+
+            <div class="kali-inputbox kali-inputbtn">
+                <button id="forgetPassowrd" onclick="processReset();" class="kali-btn">Forget Password ?</button>
+            </div> 
+
+        </fieldset>
+    </form>
+
+</section>
+
+
+
+<section id="otpSection-form" style="display:none;">
+
+    <form id="otp-form" method="post">
+        <fieldset class="kali-form">
+            <legend class="kali-formLegend">OTP FORM</legend>
+
+            <span class="error-log grid-fill danger-glow" id="reset-error-log"></span>
+            
+            <div class="kali-inputbox grid-fill">
+                <span>Email:</span>
+                <input type="text"  name="RESET_EMAIL" id="RESET_EMAIL" placeholder="Enter Your Email Linked To Account" value="" required>
+            </div>
+
+            <div class="kali-inputbox grid-fill">
+                <span>OTP CODE:</span>
+                <input type="text"  name="OTP" id="OTP" placeholder="Enter Your OTP" value="" required>
+            </div>
+
+
+            <div class="kali-inputbox kali-inputbtn">
+                <button id="forgetPassowrd" onclick="validateOTP();" class="kali-btn">VALIDATE</button>
+            </div> 
+
+        </fieldset>
+    </form>
+
+</section>
+
+
+
+
+
+<?php $kali->getCode('ROOT/CORE/FOOTER/',true);?>
+
+</body>
+</html>

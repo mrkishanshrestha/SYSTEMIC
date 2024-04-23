@@ -1,0 +1,108 @@
+/*
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+:root{
+  --text-color : #29d9d5;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 9rem;
+}
+
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: #111;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--text-color);
+  border-radius: 5rem;
+}
+
+body {
+  background: #111;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 3rem 9%;
+}
+*/
+.iconic-card-conatiner {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(35rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+  gap: 1.5rem;
+}
+.iconic-card-conatiner:hover{
+  cursor: pointer;
+}
+
+.iconic-card-icon,
+.iconic-card>div>i{
+  font-size: 4.5rem;
+  color: var(--icon-color);
+  padding: 1rem;
+}
+
+.iconic-card-conatiner .iconic-card {
+  background: #222;
+  border-radius: 1rem;
+  padding: 3rem;
+  text-align: center;
+  border: 0.2rem solid #111;
+}
+
+.iconic-card-conatiner .iconic-card:hover {
+  border: 0.2rem solid var(--text-color);
+}
+
+.iconic-icon{
+    width: 100px;
+    height: 100px;
+    color: red;
+}
+
+.iconic-card-conatiner .iconic-card .iconic-card-title {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: bolder;
+}
+  
+.iconic-card-conatiner .iconic-card .iconic-card-title::after{
+  content: "\a";
+  white-space: pre;
+}
+
+
+.iconic-card-conatiner .iconic-card .iconic-card-bio {
+  padding: 1rem 0;
+  font-size: 1.4rem;
+  color: #aaa;
+  line-height: 2;
+}
+
+
+
+

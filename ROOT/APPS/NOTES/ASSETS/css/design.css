@@ -1,0 +1,177 @@
+::-webkit-scrollbar {
+    width: 1px;
+  }
+
+
+.notes-container{
+    /*border: 1px solid red;*/
+    height: 98vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+}
+
+.notes-header{
+    display: flex;
+    gap:2rem;
+    /*border: 2px solid blue;*/
+    height: 150px;
+    width: 98%;
+    align-items: center;
+}
+
+.notes-search-cards{
+    width:100%;
+}
+
+.notes-card-header-options{
+    width:fit-content;
+}
+
+/* Button */
+.notes-card-add-new{
+    /*border: 1px solid rgb(235, 22, 22);*/
+    padding: 1rem;
+    font-size: 1.8rem;
+    background: #111;
+    color: white;
+    width: 150
+    ;
+    border-radius: 20px;
+}
+
+.notes-card-search-box{
+    height:40px;
+    background:#222;
+    border:none;
+    width: 100%;
+    border: 0.1rem solid var(--text-color);
+    border-radius: 25px;
+    color:white;
+}
+
+.notes-body{
+    /*border: 5px solid green;*/
+    height: 100%;
+    width: auto;
+}
+
+.notes-card-container{
+    display: grid;
+    /*border: 5px solid yellow;*/
+    height: 96vh;
+    grid-template-columns: repeat(auto-fill,minmax(350px,1fr));
+    overflow-y: scroll;
+    gap: 2rem;
+}
+
+
+.notes-card{
+
+    /*border: 1px solid white;*/
+    height: 350px;
+    width: 350px;
+    margin-top: 30px;
+    margin-left: 21px;
+
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    background: wheat;
+}
+
+.notes-card-title{
+    display: flex;
+    background: rgb(233, 177, 72);
+    color: black;
+    border: 1px solid white;
+    padding: 4px;
+    cursor: auto;
+    border-collapse: collapse;
+    cursor: pointer;
+}
+
+.notes-card-title>input{
+    background: none;
+    border: none;
+    height: 35px;
+    width: 300px;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    overflow-y: scroll;
+}
+
+.notes-card-title>input:active,
+.notes-card-title>input:focus{
+    background: none;
+    border: none;
+}
+
+.notes-card-title>i{
+    width: fit-content;
+    padding: 10px;
+}
+
+
+.notes-card-body{
+    background: wheat;
+    color: black;
+    border: 1px solid white;
+    height: 100vh;
+    cursor: auto;
+    overflow-y: hidden;
+}
+.notes-card-body>textarea{
+    background: wheat;
+    border: none;
+    color: black;
+    border: 1px solid white;
+    height: 100vh;
+    cursor: auto;
+    overflow-y: scroll;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+
+
+.notes-card-footer{
+    display: flex;
+    color: black;
+    border: 1px solid white;
+    justify-content: space-between;
+}
+
+
+.notes-card-footer>i{
+    /*border: 1px solid violet;*/
+    background: rgb(233, 177, 72);
+    background: rgb(233, 177, 72);
+    color: black;
+    padding: 8px;
+}
+
+
+.notes-card-settings{
+    display: flex;
+    width: fit-content;
+    gap: 1rem;
+    visibility: hidden;
+    padding-left: 10px;
+}
+
+.showme{
+    visibility: visible;
+}
+
+.notes-card-settings>i{
+    background: rgb(233, 177, 72);
+    padding: 8px;
+}
+
+

@@ -1,0 +1,98 @@
+
+            ::-webkit-scrollbar {
+                    width: 1px;
+                  }
+
+            body{
+              background-color: #242526 !important;
+            }
+
+          .datacard-container{
+            width: fit-content;
+            background-color: #2223;
+            padding: 2rem;
+            border-radius: 55px;
+          }
+  
+          .data-container-body{
+            display: flex;
+            align-items: center;
+            background: #222;
+            border-radius: 30px;
+            gap: 3rem;
+          }
+
+          .data-card{
+            border: 1px solid white;
+          }
+
+          .datacard-image{    
+            height: 255px;
+            width: 255px;
+            border-radius: 50%;
+            padding: 2rem;
+          }
+  
+          .data-title-container{
+              width: auto;
+          }
+  
+          .data-content-container{    
+            display: flex;
+            flex-direction: column;
+            padding: 1.2rem;
+            width: 420px;
+            color: var(--text-color);
+          }
+  
+          .data-context-container{
+            font-size: 1.7rem;
+            display: block;
+            height: 185px;
+            overflow-y: auto;
+          }
+  
+          .data-footer-container{
+            margin-top: 1rem;
+            /* border: 1px solid blue; */
+            font-size: 1.7rem;
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            gap: 0.7rem;
+            justify-content: end;
+          }
+  
+          .data-contents{
+            width: auto;
+            font-size: 1.7rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            justify-content: center;
+          }
+  
+  
+          .data-more-container{
+              height: 200px;
+              padding: 1.2rem;
+          }
+  
+          .data-more-body-container{
+              padding: 1rem;
+          }
+  
+          .data-content{
+              display: flex;
+              justify-content: space-between;
+              padding-left: 1rem;
+              padding-right: 1rem;
+          }
+  
+          .edit-button{
+            padding: 1rem;
+            background: var(--text-color);
+            color: black;
+            border-radius: 8px;
+            display: none;
+          }
