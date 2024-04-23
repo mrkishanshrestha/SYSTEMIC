@@ -169,7 +169,7 @@ class Jscript{
 
     linkFile(type,url,domain = false){
 
-        if(domain){url='https://www.systemic.com/'+url;}
+        if(domain){url='https://kishan.vantageloaf.work/'+url;}
         
         var element;
 
@@ -238,7 +238,7 @@ class Jscript{
     
     alertCreate(thisObject){
 
-        const alertSound = 'https://www.systemic.com/SYSTEM/IMPORT/FRONTEND/TOOLS/ALERTY/notification.mp3';
+        const alertSound = 'https://kishan.vantageloaf.work/SYSTEM/IMPORT/FRONTEND/TOOLS/ALERTY/notification.mp3';
 
         let alerty = document.createElement("div");
                 alerty.className = "alerty";
@@ -392,15 +392,15 @@ class Jscript{
             switch(what){
 
                 case 'ABOUT_US':
-                    this.playSound('https://www.systemic.com/SYSTEM/IMPORT/SITE_DATA/SOUNDS/ABOUT/about1.mp3')
+                    this.playSound('https://kishan.vantageloaf.work/SYSTEM/IMPORT/SITE_DATA/SOUNDS/ABOUT/about1.mp3')
                     .then(()=>{
-                        this.playSound('https://www.systemic.com/SYSTEM/IMPORT/SITE_DATA/SOUNDS/ABOUT/about2.mp3')
+                        this.playSound('https://kishan.vantageloaf.work/SYSTEM/IMPORT/SITE_DATA/SOUNDS/ABOUT/about2.mp3')
                         .then(()=>{
-                            this.playSound('https://www.systemic.com/SYSTEM/IMPORT/SITE_DATA/SOUNDS/ABOUT/about3.mp3')
+                            this.playSound('https://kishan.vantageloaf.work/SYSTEM/IMPORT/SITE_DATA/SOUNDS/ABOUT/about3.mp3')
                             .then(()=>{
-                                this.playSound('https://www.systemic.com/SYSTEM/IMPORT/SITE_DATA/SOUNDS/ABOUT/about4.mp3')
+                                this.playSound('https://kishan.vantageloaf.work/SYSTEM/IMPORT/SITE_DATA/SOUNDS/ABOUT/about4.mp3')
                                 .then(()=>{
-                                    this.playSound('https://www.systemic.com/SYSTEM/IMPORT/SITE_DATA/SOUNDS/ABOUT/about5.mp3');
+                                    this.playSound('https://kishan.vantageloaf.work/SYSTEM/IMPORT/SITE_DATA/SOUNDS/ABOUT/about5.mp3');
                                 });
                             });
                         });
@@ -408,15 +408,15 @@ class Jscript{
                     break;
         
                 case 'INVALID_CREDENTIALS':
-                    this.playSound('https://www.systemic.com/SYSTEM/IMPORT/SITE_DATA/SOUNDS/InvalidCredentials.mp3').then(()=>{resolve();});
+                    this.playSound('https://kishan.vantageloaf.work/SYSTEM/IMPORT/SITE_DATA/SOUNDS/InvalidCredentials.mp3').then(()=>{resolve();});
                     break;
         
                 case 'TRY_AGAIN':
-                    this.playSound('https://www.systemic.com/SYSTEM/IMPORT/SITE_DATA/SOUNDS/tryAgain.mp3').then(()=>{resolve();});
+                    this.playSound('https://kishan.vantageloaf.work/SYSTEM/IMPORT/SITE_DATA/SOUNDS/tryAgain.mp3').then(()=>{resolve();});
                     break;
             
                 case 'WELCOME':
-                    this.playSound('https://www.systemic.com/SYSTEM/IMPORT/SITE_DATA/SOUNDS/welcome.mp3').then(()=>{resolve();});
+                    this.playSound('https://kishan.vantageloaf.work/SYSTEM/IMPORT/SITE_DATA/SOUNDS/welcome.mp3').then(()=>{resolve();});
                     break;
                             
                 default:
