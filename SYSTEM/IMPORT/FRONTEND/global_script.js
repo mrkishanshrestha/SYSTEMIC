@@ -170,7 +170,7 @@ class Jscript{
 
     linkFile(type,url,domain = false){
 
-        if(domain){url='kishan.vantageloaf.work'+url;}
+        if(domain){url='https://kishan.vantageloaf.work/'+url;}
         
         var element;
 
