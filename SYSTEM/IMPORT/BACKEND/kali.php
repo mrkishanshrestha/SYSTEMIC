@@ -338,8 +338,8 @@ class kali extends firewall{
                     
                         
                 case 'ASSETS':
-                    echo '<link rel="stylesheet" href="ASSETS/CSS/design.css">
-                        <script src="ASSETS/JS/script.js"></script>';
+                    echo '<link rel="stylesheet" href="ASSETS/css/design.css">
+                        <script src="ASSETS/js/script.js"></script>';
                     break;
                     
                 default:
