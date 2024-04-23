@@ -2,10 +2,10 @@
 
 class connectar{
 
-    private $SERVERNAME = "127.0.0.1";
-    private $USERNAME = "root";
+    private $SERVERNAME = "https://kishan.vantageloaf.work/";
+    private $USERNAME = "u221140984_root";
     private $PASSWORD = "!!#elloWorld!!";
-    private $DBNAME = "systemic";
+    private $DBNAME = "u221140984_systemic";
     public  $con;
     
     function __construct(){

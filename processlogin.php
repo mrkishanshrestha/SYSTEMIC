@@ -1,7 +1,7 @@
 <?php 
 
     include_once 'SYSTEM/IMPORT/BACKEND/kali.php';
-    $kali->isLoggedIn('https://www.systemic.com/DASHBOARD');
+    $kali->isLoggedIn($kali->domain.'/DASHBOARD');
 
     if(isset($_POST['USERNAME']) && isset($_POST['PASSWORD'])){
 
@@ -12,9 +12,9 @@
         if(is_array($aData)){
 
             if($aData['STATUS']=='TRUE' && $aData['2FA']!='FALSE'){
-                $response = [ "ERROR"=> false,'MSG'=>'https://www.systemic.com/authenticate.php' ];
+                $response = [ "ERROR"=> false,'MSG'=>$kali->domain.'/authenticate.php' ];
             }else if($aData['STATUS']=='TRUE' && $aData['2FA']=='FALSE'){
-                $response = [ "ERROR"=> false,'MSG'=>'https://www.systemic.com/DASHBOARD/' ];
+                $response = [ "ERROR"=> false,'MSG'=>$kali->domain.'/DASHBOARD/king.php' ];
             }else{
                 $response = [ "ERROR"=> true,'MSG'=>'INVALID CREDITIANLS' ];
             }

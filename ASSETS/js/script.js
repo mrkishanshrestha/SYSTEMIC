@@ -78,8 +78,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 });
 
-
-
 function processReset(){
 
     event.preventDefault();
