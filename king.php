@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     <div class="content">
         <h3><?php echo $kali->sysInfo('COMPANY_NAME');?></h3>
-        <span >College Management System
+        <span >College Management System System System System
         </span>
         <a href="#login-form" class="btn kali-glow">Login Now</a>
     </div>
